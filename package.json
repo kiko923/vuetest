@@ -5,7 +5,8 @@
   "description": "Simple Node backend serving /api/test -> hello world",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "edge:dev": "edgeone pages dev"
   },
   "dependencies": {
     "express": "^4.19.2",
