@@ -1,34 +1,24 @@
-const http = require('http');
-const url = require('url');
+const express = require('express');
+const cors = require('cors');
 
-const PORT = process.env.PORT || 3000;
+const app = express();
 
-const server = http.createServer((req, res) => {
-  const parsedUrl = url.parse(req.url, true);
-  const method = req.method || 'GET';
+// Middlewares
+app.use(cors());
+app.use(express.json());
 
-  // Simple CORS for local testing
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  if (method === 'OPTIONS') {
-    res.writeHead(204);
-    res.end();
-    return;
-  }
-
-  if (method === 'GET' && parsedUrl.pathname === '/api/test') {
-    res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
-    res.end('hello world');
-    return;
-  }
-
-  // Not found
-  res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' });
-  res.end(JSON.stringify({ error: 'Not Found' }));
+// Routes
+app.get('/api/test', (req, res) => {
+  res.type('text/plain; charset=utf-8').send('hello world');
 });
 
-server.listen(PORT, () => {
+// Not found handler
+app.use((req, res) => {
+  res.status(404).json({ error: 'Not Found' });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
 });
 
