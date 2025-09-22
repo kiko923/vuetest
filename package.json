@@ -1,21 +1,18 @@
 {
-  "name": "node-functions-hello",
+  "name": "vuetest-backend",
   "version": "1.0.0",
-  "description": "Node Functions backend that returns helloworld",
-  "main": "node-functions/index.js",
+  "private": true,
+  "description": "Simple Node backend serving /api/test -> hello world",
+  "main": "server.js",
   "scripts": {
-    "start": "edgeone pages dev",
-    "dev": "edgeone pages dev"
+    "start": "node server.js"
   },
   "keywords": [
     "node",
-    "express",
+    "api",
     "hello-world"
   ],
   "author": "",
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {}
+  "license": "MIT"
 }
-
 
