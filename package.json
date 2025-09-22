@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "express": "^4.19.2",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "tencentcloud-sdk-nodejs-teo": "^4.0.0"
   },
   "keywords": [
     "node",
