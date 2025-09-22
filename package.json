@@ -1,11 +1,11 @@
 {
-  "name": "vue-hello-world-backend",
+  "name": "node-functions-hello",
   "version": "1.0.0",
-  "description": "Minimal Node backend that returns hello world",
-  "main": "src/server.js",
+  "description": "Node Functions backend that returns helloworld",
+  "main": "node-functions/index.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "start": "edgeone pages dev",
+    "dev": "edgeone pages dev"
   },
   "keywords": [
     "node",
@@ -14,12 +14,8 @@
   ],
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "express": "^4.19.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }
 
 
