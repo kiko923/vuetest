@@ -5,14 +5,9 @@
   "description": "Simple Node backend serving /api/test -> hello world",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
     "edge:dev": "edgeone pages dev"
   },
-  "dependencies": {
-    "express": "^4.19.2",
-    "cors": "^2.8.5",
-    "tencentcloud-sdk-nodejs-teo": "^4.0.0"
-  },
+  "dependencies": {},
   "keywords": [
     "node",
     "api",
